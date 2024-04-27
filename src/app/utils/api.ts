@@ -1,11 +1,15 @@
+interface apiInputs {
+    name : string;
+    url : string;
+}
 
 
 const api = {
 
-    getUsersByName : async function<T> (name:string): Promise<T> {
+    getUsersByName : async function<T> (objectInput:apiInputs): Promise<T> {
 
         try {
-            return fetch(`https://api.opendota.com/api/search?q=${name}`, {
+            return fetch(`${objectInput.url}${objectInput.name}`, {
              method  : "GET",
             cache: 'no-store'
         }).then(res => {
