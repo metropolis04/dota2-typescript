@@ -9,3 +9,17 @@ export interface UserProfile {
 export interface DotaUsers {
     profile: UserProfile,
 }
+
+export interface HeroObject {
+    id : number;
+    name : string;
+    roles : string[];
+    img : string;
+    [heroInfo:string] : string | number | boolean | null | string[];
+}
+
+export interface Infohero {
+    hero_id: string;
+    games_played: number;
+    wins: number;
+}

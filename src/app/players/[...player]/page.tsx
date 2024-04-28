@@ -8,7 +8,7 @@ export default async function ProfilePage({ params }: { params: { player: string
 
     const playerId = params.player[0]
     
-    const playerData = await api.getUsersByName<ApiResponse<Omit<DotaUsers , 'account_id'>>>({
+    const playerData = await api.getUsersByName<ApiResponse<DotaUsers>>({
         url : 'https://api.opendota.com/api/players/',
         name : playerId ,
     })
