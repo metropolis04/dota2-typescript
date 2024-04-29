@@ -3,11 +3,18 @@ import Link from "next/link"
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div>
-        <Link href="/about">About</Link>
-        <Link href="/heroes">Heroes</Link>
+    
+      <div className="flex w-100 border pt-16 bg-gray-100" >
+        <div className="px-3 w-32">
+          <Link href="/about">About</Link>
+        </div>
+        <div className="px-3 w-32">
+          <Link href="/heroes">Heroes</Link>
+        </div>
+        <div className="px-3 w-32">
+          <Link href="/search">Search</Link>
+        </div>
       </div>
-    </main>
+    
   );
 }
