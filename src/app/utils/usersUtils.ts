@@ -18,3 +18,15 @@ export class UserWrapper {
     }
 
 }
+
+export class PlayerWrapper<T extends UserProfile> {
+    private data;
+
+    constructor(value:T) {
+        this.data = value
+    }
+
+    getName() {
+        return this.data.personaname
+    }
+}

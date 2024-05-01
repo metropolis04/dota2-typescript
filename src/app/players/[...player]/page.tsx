@@ -15,7 +15,7 @@ export default async function ProfilePage({ params }: { params: { player: string
 
     
     if (playerData.success) {
-
+        
         return (
             <>
                 <div className="inline-flex flex-col items-center basis-0 border">
