@@ -1,16 +1,20 @@
 import type { UserProfile } from "../about/utils/interfaces";
 
 
-export class UserWrapper {
-    readonly data: UserProfile[];
+export class UserWrapper<T> {
+    readonly data: T;
 
-    constructor(usersData:UserProfile[]) {
+        constructor(usersData:T) {
         this.data = usersData
     }
 
     getUser(id:number) {
-        const userObject = this.data.find((value,index) => value.id === id)
-        return userObject ?? false
+        if (Array.isArray(this.data)) {
+            const userObject = this.data.find((value,index) => value.id === id)
+            return userObject ?? false
+        }
+        
+        
     }
 
     getAllUsers() {

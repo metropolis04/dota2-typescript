@@ -5,6 +5,7 @@ import { getFetch } from "@/app/utils/clientApi"
 import type { ApiResponse } from "@/app/utils/apiTypes"
 import type { UserProfile } from "@/app/about/utils/interfaces"
 import { PlayerSearched } from "./PlayerSearched"
+import { UserWrapper } from "@/app/utils/usersUtils"
 
 export const SearchComponent:React.FunctionComponent = () => {
 
@@ -19,7 +20,7 @@ export const SearchComponent:React.FunctionComponent = () => {
             }
         })
     }
-
+    const users = new UserWrapper(players)
     return (
         <>  
         <div className="flex flex-col pt-16">

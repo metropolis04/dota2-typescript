@@ -11,7 +11,7 @@ export async function GET(request :NextRequest) {
 
         const res =  await fetch(`https://api.opendota.com/api/search?q=${query}` , {
             method : "GET",
-            
+            cache : 'reload'
         })
         
         if (!res.ok) {
