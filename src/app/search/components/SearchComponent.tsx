@@ -6,11 +6,17 @@ import type { ApiResponse } from "@/app/utils/apiTypes"
 import type { UserProfile } from "@/app/about/utils/interfaces"
 import { PlayerSearched } from "./PlayerSearched"
 import { UserWrapper } from "@/app/utils/usersUtils"
+import { useSelector , useDispatch } from "react-redux"
+import type { RootState } from "@/app/reduxstore/store"
+import type { SearchStoreType } from "@/app/reduxstore/storeInterafces"
 
 export const SearchComponent:React.FunctionComponent = () => {
 
     const [name , setName] = useState<string>('')
     const [players, setPlayers] = useState<UserProfile[]>()
+    const store = useSelector<RootState>(state => state.search)
+    const dispatch = useDispatch()
+    
 
     const handleSubmit = (e:FormEvent) => {
         e.preventDefault()
