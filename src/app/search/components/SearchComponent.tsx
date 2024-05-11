@@ -6,23 +6,23 @@ import type { ApiResponse } from "@/app/utils/apiTypes"
 import type { UserProfile } from "@/app/about/utils/interfaces"
 import { PlayerSearched } from "./PlayerSearched"
 import { UserWrapper } from "@/app/utils/usersUtils"
-import { useSelector , useDispatch } from "react-redux"
-import type { RootState } from "@/app/reduxstore/store"
-import type { SearchStoreType } from "@/app/reduxstore/storeInterafces"
+import { useAppSelector , useAppDispatch } from "@/app/reduxstore/hooks"
+import { updatesearch } from "@/app/reduxstore/store"
 
 export const SearchComponent:React.FunctionComponent = () => {
 
     const [name , setName] = useState<string>('')
     const [players, setPlayers] = useState<UserProfile[]>()
-    const store = useSelector<RootState>(state => state.search)
-    const dispatch = useDispatch()
+    const store = useAppSelector(state => state.search)
+    const dispatch = useAppDispatch()
     
 
     const handleSubmit = (e:FormEvent) => {
         e.preventDefault()
         getFetch<ApiResponse<UserProfile[]>>(name).then(data => {
             if (data.success) {
-                setPlayers([...data.data])
+                // setPlayers([...data.data])
+                dispatch(updatesearch({ players : {search : name , data : data.data}}))
             }
         })
     }
@@ -52,9 +52,9 @@ export const SearchComponent:React.FunctionComponent = () => {
                 </form>
             </div>
         </div>
-        {players && players.length > 0 ?
+        {store.players.data.length > 0 ?
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4  gap-x-4 gap-y-4 justify-items-stretch w-100 pt-4">
-            {players.map((value,index) => {
+            {store.players.data.map((value,index) => {
                 return  <PlayerSearched key={index} data={value} />
             })}
         </div> : null}

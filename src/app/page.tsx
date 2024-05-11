@@ -14,6 +14,9 @@ export default function Home() {
         <div className="px-3 w-32">
           <Link href="/search">Search</Link>
         </div>
+        <div className="px-3 w-32">
+          <Link href="/supabase">Supabase</Link>
+        </div>
       </div>
     
   );

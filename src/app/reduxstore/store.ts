@@ -1,5 +1,6 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 import { searchInputs } from "./searchInputs";
+import { SearchStoreType } from "./storeInterafces";
 
 const counterSlice = createSlice({
   name: "user",
@@ -28,7 +29,7 @@ const counterSlice = createSlice({
     updatecon : (state, action ) => {
       state.condition = action.payload; 
     },
-    updatesarch : (state, action ) => {
+    updatesearch : (state , action : {payload : SearchStoreType , type : string} ) => {
         state.search = action.payload; 
       },
     updateval: (state, action ) => {
@@ -48,12 +49,14 @@ const store = configureStore({
 
 export type StoreApp = typeof counterSlice
 export type RootState = ReturnType<StoreApp['getInitialState']>
+export type AppDispatch = typeof store['dispatch']
 
 const { 
   update, 
   updatecon, 
   updateval , 
-  updatestatic , 
+  updatestatic ,
+  updatesearch 
 } = counterSlice.actions;
 
 export {
@@ -62,4 +65,5 @@ export {
   updatecon, 
   updateval, 
   updatestatic ,
+  updatesearch
 };
