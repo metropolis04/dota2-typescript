@@ -1,5 +1,5 @@
 import { createClient } from '@supabase/supabase-js'
-import { Database } from './utils/supabase'
+import { Database } from './utils/supabaseTypes'
 import endpoints from './endpoints'
 
 export const supabase = createClient<Database>(
@@ -12,4 +12,3 @@ export const supabase = createClient<Database>(
             detectSessionInUrl: false,
         }
      })
-

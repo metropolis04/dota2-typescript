@@ -4,7 +4,7 @@ import { supabaseApi } from "@/app/utils/supabaseApi"
 export default async function SupabasePlayers() {
 
     const data = await supabaseApi.getPlayers()
-    
+    console.log(data)
     if (data) {
         return (
             <>

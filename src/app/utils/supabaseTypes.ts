@@ -9,21 +9,27 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      players: {
+      testtable: {
         Row: {
           created_at: string
           id: number
           name: string | null
+          state: boolean | null
+          stripeId: number | null
         }
         Insert: {
           created_at?: string
           id?: number
           name?: string | null
+          state?: boolean | null
+          stripeId?: number | null
         }
         Update: {
           created_at?: string
           id?: number
           name?: string | null
+          state?: boolean | null
+          stripeId?: number | null
         }
         Relationships: []
       }
