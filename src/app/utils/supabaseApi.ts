@@ -9,7 +9,7 @@ export const supabaseApi = {
     getPlayers : async () => {
         const countriesWithCitiesQuery = supabase
         .from("custom_players")
-        .select('name');
+        .select('*');
         type CountriesWithCities = QueryData<typeof countriesWithCitiesQuery>;
         const { data, error } = await countriesWithCitiesQuery;
         
