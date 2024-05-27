@@ -30,7 +30,7 @@ export const SearchComponent:React.FunctionComponent = () => {
     return (
         <>  
         <div className="flex flex-col pt-16">
-            <h6>Seacrh player by name :</h6>
+            <h6>Seacrh players by a name :</h6>
             <div className="self-start">
                 <form onSubmit={handleSubmit} >
                     <div className="flex flex-row items-end pb-2">

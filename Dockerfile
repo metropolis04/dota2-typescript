@@ -45,6 +45,19 @@ COPY . .
 # Run the build script.
 RUN npm run build
 
+# FROM deps as dev
+
+
+# RUN --mount=type=bind,source=package.json,target=package.json \
+#     --mount=type=bind,source=package-lock.json,target=package-lock.json \
+#     --mount=type=cache,target=/root/.npm \
+#     npm ci --include=dev
+
+
+# COPY . .
+
+# CMD npm run dev
+
 ################################################################################
 # Create a new stage to run the application with minimal runtime dependencies
 # where the necessary files are copied from the build stage.
