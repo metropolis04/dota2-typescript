@@ -3,6 +3,7 @@ import api from "../utils/api"
 import type { ApiResponse } from "../utils/apiTypes"
 import type { HeroObject } from "../about/utils/interfaces"
 import { HeroComponent } from "./components/HeroComponent"
+import { ContainerComponent } from "../components/ContainerComponent"
 
 export default async function HeroesPage() {
 
@@ -13,10 +14,12 @@ export default async function HeroesPage() {
     
     if (heroesObject.success) {
         return (
-            <>
-                <div className="flex flex-row flex-wrap">
-                    {heroesObject.data.map((value,index) => <HeroComponent key={index} heroData={value}  /> )}
-                </div>
+            <>  
+                <ContainerComponent>
+                    <div className="flex flex-row flex-wrap w-full">
+                        {heroesObject.data.map((value,index) => <HeroComponent key={index} heroData={value}  /> )}
+                    </div>
+                </ContainerComponent>
             </>
         )
     } else {
