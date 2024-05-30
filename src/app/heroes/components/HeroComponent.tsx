@@ -1,5 +1,5 @@
 import React from "react"
-import type { HeroObject } from "@/app/about/utils/interfaces"
+import type { HeroObject } from "@/app/matches/utils/interfaces"
 import Link from "next/link"
 
 

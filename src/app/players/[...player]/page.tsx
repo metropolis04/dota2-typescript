@@ -1,5 +1,5 @@
 import React , {Suspense} from "react"
-import type { DotaUsers } from "@/app/about/utils/interfaces"
+import type { DotaUsers } from "@/app/matches/utils/interfaces"
 import api from "@/app/utils/api"
 import type { ApiResponse } from "@/app/utils/apiTypes"
 import { PlayerInfoTable } from "../components/PlayerInfoTable"

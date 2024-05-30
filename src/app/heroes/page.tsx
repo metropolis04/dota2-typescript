@@ -1,7 +1,7 @@
 import React from "react"
 import api from "../utils/api"
 import type { ApiResponse } from "../utils/apiTypes"
-import type { HeroObject } from "../about/utils/interfaces"
+import type { HeroObject } from "../matches/utils/interfaces"
 import { HeroComponent } from "./components/HeroComponent"
 import { ContainerComponent } from "../components/ContainerComponent"
 

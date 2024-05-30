@@ -1,5 +1,5 @@
 import React from "react"
-import type { Infohero, HeroObject } from "@/app/about/utils/interfaces"
+import type { Infohero, HeroObject } from "@/app/matches/utils/interfaces"
 
 
 interface Props {

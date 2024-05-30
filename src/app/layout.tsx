@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Raleway , Open_Sans } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import { ClientPrevider } from "./reduxstore/ClientProvider";
 import { TopLayer } from "./components/TopLayer";
 
 const poppins = Open_Sans({ subsets: ["latin"] , weight : ['400','500','600'] });
-export const raleway = Raleway({subsets: ["latin"] , weight : ['400','500','600']})
+
 
 export const metadata: Metadata = {
   title: "Create Next App",

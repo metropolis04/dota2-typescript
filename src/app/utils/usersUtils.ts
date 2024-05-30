@@ -1,4 +1,4 @@
-import type { UserProfile } from "../about/utils/interfaces";
+import type { UserProfile } from "../matches/utils/interfaces";
 
 
 export class UserWrapper<T> {

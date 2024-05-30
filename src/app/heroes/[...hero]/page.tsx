@@ -1,7 +1,7 @@
 import React from "react"
 import api from "@/app/utils/api"
 import type { ApiResponse } from "@/app/utils/apiTypes"
-import type { Infohero , HeroObject } from "@/app/about/utils/interfaces"
+import type { Infohero , HeroObject } from "@/app/matches/utils/interfaces"
 import { InfoHeroComponent } from "../components/InfoHeroComponent"
 
 export default async function HeroPage({params} : {params : {hero : string}}) {

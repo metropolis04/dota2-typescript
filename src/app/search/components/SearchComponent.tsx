@@ -3,7 +3,7 @@
 import React, {FormEvent, useState, useEffect} from "react"
 import { getFetch } from "@/app/utils/clientApi"
 import type { ApiResponse } from "@/app/utils/apiTypes"
-import type { UserProfile } from "@/app/about/utils/interfaces"
+import type { UserProfile } from "@/app/matches/utils/interfaces"
 import { PlayerSearched } from "./PlayerSearched"
 import { UserWrapper } from "@/app/utils/usersUtils"
 import { useAppSelector , useAppDispatch } from "@/app/reduxstore/hooks"

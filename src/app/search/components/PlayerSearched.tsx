@@ -1,5 +1,5 @@
 import React from "react"
-import type { UserProfile } from "@/app/about/utils/interfaces"
+import type { UserProfile } from "@/app/matches/utils/interfaces"
 import Link from "next/link"
 
 interface Props {
