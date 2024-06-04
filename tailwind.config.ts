@@ -1,3 +1,4 @@
+import { transform } from "next/dist/build/swc";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -24,6 +25,15 @@ const config: Config = {
         }
       }
     },
+    keyframes : {
+      jumpViewDownMenu : {
+        '0%' : {transform : 'translateY(30px)',opacity : '0'},
+        '100%' : {transform : 'translateY(0px)' , opacity: '1'}
+      }
+    },
+    animation : {
+      jumpViewDownMenu : 'jumpViewDownMenu 0.3s'
+    }
   },
   plugins: [],
 };

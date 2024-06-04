@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Open_Sans } from "next/font/google";
+import { Open_Sans , Poppins } from "next/font/google";
 import "./globals.css";
 import { ClientPrevider } from "./reduxstore/ClientProvider";
 import { TopLayer } from "./components/TopLayer";
 
-const poppins = Open_Sans({ subsets: ["latin"] , weight : ['400','500','600'] });
+const poppins = Poppins({ subsets: ["latin"] , weight : ['400','500','600'] });
 
 
 export const metadata: Metadata = {
