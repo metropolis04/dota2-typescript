@@ -13,7 +13,7 @@ export default async function SupabasePlayers() {
         return (
             <>
                {data.map((value,index) => {
-                return <div className="flex w-80 border"><h6 key={index}>{value.name}</h6></div>
+                return <div key={index} className="flex w-80 border"><h6 >{value.name}</h6></div>
                })} 
             </>
         )

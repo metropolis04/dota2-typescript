@@ -17,6 +17,9 @@ export default async function AboutPage() {
                             <div className="px-2">
                                 <h6 className="text-redProject cursor-pointer text-sm" >Filter</h6>
                             </div>
+                            <div className="px-2">
+                                <h6 className="text-redProject cursor-pointer text-sm" >Leagues</h6>
+                            </div>
                         </div>
                     </ContainerComponent>
                 </div>

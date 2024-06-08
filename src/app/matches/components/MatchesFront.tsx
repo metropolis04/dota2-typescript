@@ -21,7 +21,7 @@ export const MatchesFront:React.FunctionComponent = async () => {
             <>
                 <ContainerComponent>
                     <div className="flex flex-row w-full pt-16" >
-                        <div className="pt-1 grid grid-cols-3 gap-10 pt-6 pb-4">
+                        <div className="pt-1 grid grid-cols-3 gap-10 pt-6 pb-4 w-full">
                             <div className="col-span-2 flex flex-col bg-white p-5 animate-jumpViewDownMenu">
                                 <div>
                                     <h6 className="text-3xl text-red-900 font-medium" >Last match info</h6>
@@ -88,7 +88,7 @@ export const MatchesFront:React.FunctionComponent = async () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className=" pt-1 bg-white pb-4  animate-jumpViewDownMenu">
+                            <div className=" pt-1 bg-white pb-4 animate-jumpViewDownMenu">
                                 <div className="flex flex-col justify-between h-full p-5">
                                     <div className="flex flex-col">
                                         <div>
@@ -96,7 +96,7 @@ export const MatchesFront:React.FunctionComponent = async () => {
                                         </div>
                                         <div className="flex flex-col">
                                             {matchOptions.getHotLeagues().map((value,index) => {
-                                                return <HotLeagueComponent data={value} matches={matchOptions.getLeagueMatches(value.league_name)} />
+                                                return <HotLeagueComponent key={index} data={value} matches={matchOptions.getLeagueMatches(value.league_name)} />
                                             })}
                                         </div>
                                     </div>
