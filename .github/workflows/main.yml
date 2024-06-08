@@ -28,5 +28,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          target: prod
           tags: ${{ secrets.DOCKER_USERNAME }}/dota2-typescript-server:latest
