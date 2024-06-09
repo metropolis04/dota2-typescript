@@ -19,7 +19,7 @@ class MatchDetails {
     }
 
     getLastMatch() {
-        return this.matches[this.matches.length - 1]
+        return this.matches.sort((a,b) => a.start_time - b.start_time)[this.matches.length - 1]
     }
 
     getMatchDate(match:ProMatch) {

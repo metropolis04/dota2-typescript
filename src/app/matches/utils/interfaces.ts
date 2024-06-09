@@ -41,3 +41,7 @@ export interface Infohero {
     games_played: number;
     wins: number;
 }
+
+export interface ProMatchInfo {
+    [key : string] : unknown
+}

@@ -8,6 +8,8 @@ import MatchDetails from "../utils/matchUtils"
 import { ClockIcon , CalendarIcon, ArrowRightShort } from "@/app/components/icons"
 import Image from "next/image"
 import { HotLeagueComponent } from "./HotLeagueComponent"
+import { LastMatchComponent } from "./LastMatchComponent"
+
 
 export const MatchesFront:React.FunctionComponent = async () => {
 
@@ -15,7 +17,8 @@ export const MatchesFront:React.FunctionComponent = async () => {
     
     if (users.success) {
 
-        const matchOptions = new MatchDetails(users.data)
+        
+        const matchOptions:MatchDetails = new MatchDetails(users.data)
         
         return (
             <>
@@ -29,50 +32,7 @@ export const MatchesFront:React.FunctionComponent = async () => {
                                 <div className="pt-6">
                                     <h6 className="text-2xl text-red-900 font-medium" >{matchOptions.getLastMatch().league_name}</h6>
                                 </div>
-                                <div className="w-full flex flex-row mt-5 gap-x-8">
-                                    <div className="basis-1/2 justify-center items-center" >
-                                        <div className={`text-lg text-red-900 font-medium border-b-2 flex flex-row items-center ${matchOptions.getLastMatch().radiant_win ? 'border-rose-500' : "border-emerald-500" }`} >
-                                            <span className="cursor-pointer">{matchOptions.getLastMatch().dire_name}</span>
-                                            {!matchOptions.getLastMatch().radiant_win ? 
-                                            <div className="pl-2 mb-1" >
-                                                <span className="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">Win</span>
-                                            </div> :
-                                            <div className="pl-2 mb-1">
-                                                <span className="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">Lose</span>
-                                            </div>}
-                                        </div>
-                                        <div className="mt-4">
-                                            <span className="text-4xl font-bold">{matchOptions.getLastMatch().dire_score}</span>
-                                        </div>
-                                        <div className="mt-4">
-                                            <span className="text-xl font-bold text-rose-500">The dire</span>
-                                        </div>
-                                        <div className="mt-4">
-                                            <Image width={40} height={40} className="w-8 h-8 rounded-full" src={matchOptions.getLogoObject(matchOptions.getLastMatch().dire_name)} alt="Rounded avatar" />
-                                        </div>
-                                    </div>
-                                    <div className="basis-1/2 justify-center items-center" >
-                                        <div className={`text-lg text-red-900 font-medium border-b-2 flex flex-row items-center ${matchOptions.getLastMatch().radiant_win ? "border-emerald-500" : 'border-rose-500' } `}>
-                                            <span className="cursor-pointer">{matchOptions.getLastMatch().radiant_name}</span>
-                                            {matchOptions.getLastMatch().radiant_win ? 
-                                            <div className="pl-2 mb-1" >
-                                                <span className="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300">Win</span>
-                                            </div> :
-                                            <div className="pl-2 mb-1">
-                                                <span className="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">Lose</span>
-                                            </div>}
-                                        </div>
-                                        <div className="mt-4">
-                                            <span className="text-4xl font-bold">{matchOptions.getLastMatch().radiant_score}</span>
-                                        </div>
-                                        <div className="mt-4">
-                                            <span className="text-xl font-bold text-emerald-600">The radiant</span>
-                                        </div>
-                                        <div className="mt-4">
-                                            <Image width={40} height={40} className="w-8 h-8 rounded-full" src={matchOptions.getLogoObject(matchOptions.getLastMatch().radiant_name)} alt="Rounded avatar" />
-                                        </div>
-                                    </div>
-                                </div>
+                                <LastMatchComponent data={matchOptions.getLastMatch()} matchOptions={matchOptions} />
                                 <div className="flex flex-col mt-6" >
                                     <div className="flex flex-row items-center justify-start">
                                         <CalendarIcon width="18px" height="18px"  />
@@ -95,7 +55,7 @@ export const MatchesFront:React.FunctionComponent = async () => {
                                             <h6 className="text-3xl text-red-900 font-medium" >Hot leagues</h6>
                                         </div>
                                         <div className="flex flex-col">
-                                            {matchOptions.getHotLeagues().map((value,index) => {
+                                            {matchOptions.getHotLeagues().slice(0,7).map((value,index) => {
                                                 return <HotLeagueComponent key={index} data={value} matches={matchOptions.getLeagueMatches(value.league_name)} />
                                             })}
                                         </div>
