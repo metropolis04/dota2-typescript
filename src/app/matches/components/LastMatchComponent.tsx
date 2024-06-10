@@ -43,9 +43,9 @@ export const LastMatchComponent:React.FunctionComponent<Props> = async ({data , 
                             <Image width={40} height={40} className="w-8 h-8 rounded-full" src={matchOptions.getLogoObject(data.dire_name)} alt="Rounded avatar" />
                         </div>
                         <div className="mt-4 flex flex-row gap-2" >
-                            {info.getTeams()?.dire.map(value => {
+                            {info.getTeams()?.dire.map((value,index) => {
                                 let heroObject = dota2heroes.find(hero => hero.id === value.hero_id )
-                                return <img src={heroObject  ? heroObject.image : noLogoImage.src} title={heroObject?.localized_name} alt="hero image" width={64} height={64} />
+                                return <img key={index} src={heroObject  ? heroObject.image : noLogoImage.src} title={heroObject?.localized_name} alt="hero image" width={64} height={64} />
                             })}
                         </div>
                     </div>
@@ -70,9 +70,9 @@ export const LastMatchComponent:React.FunctionComponent<Props> = async ({data , 
                             <Image width={40} height={40} className="w-8 h-8 rounded-full" src={matchOptions.getLogoObject(data.radiant_name)} alt="Rounded avatar" />
                         </div>
                         <div className="mt-4 flex flex-row gap-2" >
-                            {info.getTeams()?.radiant.map(value => {
+                            {info.getTeams()?.radiant.map((value, index) => {
                                     let heroObject = dota2heroes.find(hero => hero.id === value.hero_id )
-                                    return <img src={heroObject  ? heroObject.image : noLogoImage.src} title={heroObject?.localized_name} alt="hero image" width={64} height={64} />
+                                    return <img key={index} src={heroObject  ? heroObject.image : noLogoImage.src} title={heroObject?.localized_name} alt="hero image" width={64} height={64} />
                                 })}
                         </div>
                     </div>
