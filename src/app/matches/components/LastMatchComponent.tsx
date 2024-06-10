@@ -4,6 +4,9 @@ import Image from "next/image"
 import MatchDetails from "../utils/matchUtils"
 import api from "@/app/utils/api"
 import type { ApiResponse } from "@/app/utils/apiTypes"
+import { InfoMatchUtils } from "../utils/infoMatchUtils"
+import dota2heroes from "@/app/heroes/heroes"
+import noLogoImage from "@/app/assets/question.png"
 
 interface Props {
     data : ProMatch
@@ -14,7 +17,8 @@ export const LastMatchComponent:React.FunctionComponent<Props> = async ({data , 
 
     const matchInfo = await api.getDotaApi<ApiResponse<ProMatchInfo>>(`matches/${data.match_id}`)
     if (matchInfo.success) {
-        // console.log(matchInfo.data.picks_bans)
+        const info = new InfoMatchUtils(matchInfo.data)
+        
         return (
             <>
                 <div className="w-full flex flex-row mt-5 gap-x-8">
@@ -38,6 +42,12 @@ export const LastMatchComponent:React.FunctionComponent<Props> = async ({data , 
                         <div className="mt-4">
                             <Image width={40} height={40} className="w-8 h-8 rounded-full" src={matchOptions.getLogoObject(data.dire_name)} alt="Rounded avatar" />
                         </div>
+                        <div className="mt-4 flex flex-row gap-2" >
+                            {info.getTeams()?.dire.map(value => {
+                                let heroObject = dota2heroes.find(hero => hero.id === value.hero_id )
+                                return <img src={heroObject  ? heroObject.image : noLogoImage.src} title={heroObject?.localized_name} alt="hero image" width={64} height={64} />
+                            })}
+                        </div>
                     </div>
                     <div className="basis-1/2 justify-center items-center" >
                         <div className={`text-lg text-red-900 font-medium border-b-2 flex flex-row items-center ${data.radiant_win ? "border-emerald-500" : 'border-rose-500' } `}>
@@ -58,6 +68,12 @@ export const LastMatchComponent:React.FunctionComponent<Props> = async ({data , 
                         </div>
                         <div className="mt-4">
                             <Image width={40} height={40} className="w-8 h-8 rounded-full" src={matchOptions.getLogoObject(data.radiant_name)} alt="Rounded avatar" />
+                        </div>
+                        <div className="mt-4 flex flex-row gap-2" >
+                            {info.getTeams()?.radiant.map(value => {
+                                    let heroObject = dota2heroes.find(hero => hero.id === value.hero_id )
+                                    return <img src={heroObject  ? heroObject.image : noLogoImage.src} title={heroObject?.localized_name} alt="hero image" width={64} height={64} />
+                                })}
                         </div>
                     </div>
                 </div>
