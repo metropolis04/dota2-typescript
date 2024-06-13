@@ -7,6 +7,7 @@ import type { ApiResponse } from "@/app/utils/apiTypes"
 import { InfoMatchUtils } from "../utils/infoMatchUtils"
 import dota2heroes from "@/app/heroes/heroes"
 import noLogoImage from "@/app/assets/question.png"
+import { HeroLastMatchFront } from "./last_match_components/HeroLastMatchFront"
 
 interface Props {
     data : ProMatch
@@ -45,7 +46,7 @@ export const LastMatchComponent:React.FunctionComponent<Props> = async ({data , 
                         <div className="mt-4 flex flex-row gap-2" >
                             {info.getTeams()?.dire.map((value,index) => {
                                 let heroObject = dota2heroes.find(hero => hero.id === value.hero_id )
-                                return <img key={index} src={heroObject  ? heroObject.image : noLogoImage.src} title={heroObject?.localized_name} alt="hero image" width={64} height={64} />
+                                return <HeroLastMatchFront key={index} data={value} heroObject={heroObject ?? undefined} />
                             })}
                         </div>
                     </div>
@@ -72,7 +73,7 @@ export const LastMatchComponent:React.FunctionComponent<Props> = async ({data , 
                         <div className="mt-4 flex flex-row gap-2" >
                             {info.getTeams()?.radiant.map((value, index) => {
                                     let heroObject = dota2heroes.find(hero => hero.id === value.hero_id )
-                                    return <img key={index} src={heroObject  ? heroObject.image : noLogoImage.src} title={heroObject?.localized_name} alt="hero image" width={64} height={64} />
+                                    return <HeroLastMatchFront key={index} data={value} heroObject={heroObject ?? undefined} />
                                 })}
                         </div>
                     </div>

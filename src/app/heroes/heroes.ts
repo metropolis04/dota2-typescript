@@ -1519,7 +1519,7 @@ const dota2heroes = [
         "id": 104,
         "name": "npc_dota_hero_legion_commander",
         "localized_name": "Legion Commander",
-        "image" : "https://hvazzksemczbiehbohtw.supabase.co/storage/v1/object/public/heroes/images/elder_titan.png?t=2024-06-10T20%3A05%3A08.423Z",
+        "image" : "https://hvazzksemczbiehbohtw.supabase.co/storage/v1/object/public/heroes/images/legion_commander.png?t=2024-06-10T20%3A05%3A23.343Z",
         "primary_attr": "str",
         "attack_type": "Melee",
         "roles": [
