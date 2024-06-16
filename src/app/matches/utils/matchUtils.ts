@@ -22,6 +22,10 @@ class MatchDetails {
         return this.matches.sort((a,b) => a.start_time - b.start_time)[this.matches.length - 1]
     }
 
+    getSortedMatches() {
+        return this.matches.sort((a,b) => b.start_time - a.start_time)
+    }
+
     getMatchDate(match:ProMatch) {
         return new Date(match.start_time * 1000).toLocaleString()
     }

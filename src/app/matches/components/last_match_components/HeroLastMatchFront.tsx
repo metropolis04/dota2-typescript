@@ -26,26 +26,26 @@ export const HeroLastMatchFront:React.FunctionComponent<Props> = ({data , heroOb
                 <div className="flex flex-col border pt-1">
                     <div className="flex flex-row px-2 py-1" >
                         <div >
-                            <h6 className="font-semibold leading-none" >K</h6>
+                            <h6 className="font-semibold leading-none text-sm" >K</h6>
                         </div>
                         <div className="px-2">
-                            <h6 className="text-base leading-none" >{projectUtils.getArgument(data , 'kills')}</h6>
+                            <h6 className="text-sm leading-none" >{projectUtils.getArgument(data , 'kills')}</h6>
                         </div>
                     </div>
                     <div className="flex flex-row px-2 py-1" >
                         <div >
-                           <h6 className="font-semibold leading-none">D</h6> 
+                           <h6 className="font-semibold leading-none text-sm">D</h6> 
                         </div>
                         <div className="px-2">
-                            <h6 className="leading-none">{projectUtils.getArgument(data , 'deaths')}</h6>
+                            <h6 className="leading-none text-sm">{projectUtils.getArgument(data , 'deaths')}</h6>
                         </div>
                     </div>
                     <div className="flex flex-row px-2 py-1" >
                         <div >
-                           <h6 className="font-semibold leading-none">A</h6> 
+                           <h6 className="font-semibold leading-none text-sm">A</h6> 
                         </div>
                         <div className="px-2">
-                            <h6 className="leading-none" >{projectUtils.getArgument(data , 'assists')}</h6>
+                            <h6 className="leading-none text-sm" >{projectUtils.getArgument(data , 'assists')}</h6>
                         </div>
                     </div>
                 </div>

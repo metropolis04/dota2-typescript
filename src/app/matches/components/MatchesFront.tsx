@@ -23,7 +23,7 @@ export const MatchesFront:React.FunctionComponent = async () => {
         return (
             <>
                 <ContainerComponent>
-                    <div className="flex flex-row w-full pt-16" >
+                    <div className="flex flex-col w-full pt-16" >
                         <div className="pt-1 grid grid-cols-3 gap-10 pt-6 pb-4 w-full">
                             <div className="col-span-2 flex flex-col bg-white p-5 animate-jumpViewDownMenu">
                                 <div>
@@ -65,6 +65,11 @@ export const MatchesFront:React.FunctionComponent = async () => {
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div className="grid grid-cols-3 gap-x-8 w-full pb-8 pt-4" >
+                          {matchOptions.getSortedMatches().slice(0,3).map((value,index) => {
+                            return <div key={index} className="bg-white" >1</div>
+                          })}
                         </div>
                     </div>
                 </ContainerComponent>
