@@ -1,5 +1,22 @@
 import { transform } from "next/dist/build/swc";
 import type { Config } from "tailwindcss";
+const plugin = require('tailwindcss/plugin')
+
+import { PluginCreator } from 'tailwindcss/types/config';
+
+const containerPlugin: PluginCreator = ({ addComponents }) =>
+  addComponents({
+    '.selectContainer': {
+      position:'absolute',
+      width : '400px',
+      maxHeight : '200px',
+      left: '0px',
+      top : '32px',
+      overflow : 'auto',
+      zIndex:'2',
+      padding: '6px',
+    }
+  });
 
 const config: Config = {
   content: [
@@ -10,7 +27,10 @@ const config: Config = {
   theme: {
     extend: {
       colors : {
-        redProject : '#a45454',
+        redProject : '#9B4444',
+        redLightProject : '#C68484',
+        greenProject : '#A3C9AA',
+        greyProject : '#EEEEEE',
         brown : {
           50: '#fdf8f6',
           100: '#f2e8e5',
@@ -35,6 +55,6 @@ const config: Config = {
       jumpViewDownMenu : 'jumpViewDownMenu 0.3s'
     }
   },
-  plugins: [],
+  plugins: [containerPlugin],
 };
 export default config;

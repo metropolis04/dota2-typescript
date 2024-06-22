@@ -9,7 +9,7 @@ import { ClockIcon , CalendarIcon, ArrowRightShort } from "@/app/components/icon
 import Image from "next/image"
 import { HotLeagueComponent } from "./HotLeagueComponent"
 import { LastMatchComponent } from "./LastMatchComponent"
-
+import { LastMatchesComponent } from "./LastMatchesComponent"
 
 export const MatchesFront:React.FunctionComponent = async () => {
 
@@ -66,11 +66,7 @@ export const MatchesFront:React.FunctionComponent = async () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="grid grid-cols-3 gap-x-8 w-full pb-8 pt-4" >
-                          {matchOptions.getSortedMatches().slice(0,3).map((value,index) => {
-                            return <div key={index} className="bg-white" >1</div>
-                          })}
-                        </div>
+                        <LastMatchesComponent  data={users.data} />
                     </div>
                 </ContainerComponent>
             </>

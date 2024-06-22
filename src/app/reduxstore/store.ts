@@ -1,6 +1,8 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 import { searchInputs } from "./searchInputs";
 import { SearchStoreType } from "./storeInterafces";
+import filterStores from "./filterStore";
+import { FilterStoreType } from "./storeInterafces";
 
 const counterSlice = createSlice({
   name: "user",
@@ -20,7 +22,8 @@ const counterSlice = createSlice({
       pushlog : false
     },
     static : {},
-    search : searchInputs
+    search : searchInputs,
+    filters: filterStores
   },
   reducers: {
     update : (state, action ) => {
@@ -31,7 +34,10 @@ const counterSlice = createSlice({
     },
     updatesearch : (state , action : {payload : SearchStoreType , type : string} ) => {
         state.search = action.payload; 
-      },
+    },
+    updatesfilters : (state , action : {payload : FilterStoreType , type : string } ) => {
+      state.filters = action.payload; 
+    },
     updateval: (state, action ) => {
       state.value = action.payload; 
     },
@@ -56,7 +62,8 @@ const {
   updatecon, 
   updateval , 
   updatestatic ,
-  updatesearch 
+  updatesearch,
+  updatesfilters
 } = counterSlice.actions;
 
 export {
@@ -65,5 +72,6 @@ export {
   updatecon, 
   updateval, 
   updatestatic ,
-  updatesearch
+  updatesearch,
+  updatesfilters
 };

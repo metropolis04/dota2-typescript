@@ -6,3 +6,12 @@ export interface SearchStoreType {
         data : UserProfile[]
     }
 }
+
+export interface FilterStoreType {
+    lastmatches : {
+        league : string,
+        duration : string,
+        team : string,
+        teamName : string,
+    }
+}

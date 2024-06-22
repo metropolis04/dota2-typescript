@@ -5,5 +5,6 @@ export const searchInputs:SearchStoreType = {
     players : {
         search : "",
         data : []
-    }
+    },
+    
 }

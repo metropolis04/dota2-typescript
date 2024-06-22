@@ -8,7 +8,8 @@ import Image from "next/image"
 export const TopLayer:React.FunctionComponent = () => {
 
     const backImage = {
-        backgroundImage: `url(${background_menu.src})`,
+        // backgroundImage: `url(${background_menu.src})`,
+        backgroundColor: '#9B4444',
         height : 'auto',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: "center",

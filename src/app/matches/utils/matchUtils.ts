@@ -49,6 +49,10 @@ class MatchDetails {
         return this.matches.filter(value => value.league_name === league)
     }
 
+    getTeams() {
+        return this.matches.map(value => value.radiant_name).concat(this.matches.map(value => value.dire_name))
+    }
+
 }
 
 export default MatchDetails
