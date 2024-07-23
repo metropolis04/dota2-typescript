@@ -23,7 +23,7 @@ export const MatchMediumComponent = ({data} : { data : ProMatch }):React.JSX.Ele
                             <div className="mb-1">
                                 <span className="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">Lose</span>
                             </div>}
-                            <div><span className="cursor-pointer">{data.dire_name}</span></div>
+                            <div><span className="cursor-pointer">{data.dire_name ?? "-"}</span></div>
                         </div>
                         <div className="mt-4">
                             <span className="text-2xl font-bold">{data.dire_score}</span>
@@ -41,7 +41,7 @@ export const MatchMediumComponent = ({data} : { data : ProMatch }):React.JSX.Ele
                             <div className="mb-1">
                                 <span className="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300">Lose</span>
                             </div>}
-                            <div><span className="cursor-pointer">{data.radiant_name}</span></div>
+                            <div><span className="cursor-pointer">{data.radiant_name ?? "-"}</span></div>
                         </div>
                         <div className="mt-4">
                             <span className="text-2xl font-bold">{data.radiant_score}</span>

@@ -7,6 +7,10 @@ const filterStores:FilterStoreType = {
         duration : "",
         team : "",
         teamName : "",
+    },
+    lm_settings : {
+        page_units : 6,
+        page : 1,
     }
 }
 

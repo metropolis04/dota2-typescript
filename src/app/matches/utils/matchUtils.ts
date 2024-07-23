@@ -50,7 +50,9 @@ class MatchDetails {
     }
 
     getTeams() {
-        return this.matches.map(value => value.radiant_name).concat(this.matches.map(value => value.dire_name))
+
+        return _.uniq(this.matches.map(value => value && value.radiant_name).concat(this.matches.map(value => value && value.dire_name)))
+        
     }
 
 }
