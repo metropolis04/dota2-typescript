@@ -1,8 +1,13 @@
+import { Fetch } from "@supabase/supabase-js/dist/module/lib/types";
 import endpoints from "../endpoints";
 
 interface apiInputs {
     name : string;
     url : string;
+}
+
+interface FetchOptions {
+    cache? : boolean
 }
 
 
@@ -34,13 +39,13 @@ const api = {
         
             
     },
-    async getDotaApi<T>(url:string):Promise<T> {
+    async getDotaApi<T>(url:string , options?:FetchOptions):Promise<T> {
         return fetch(`${endpoints.dotaApi}${url}` , {
              method : "GET",
              headers : {
                  'Content-Type' : 'application/json'
              },
-             cache: 'no-store'
+             next : {revalidate : options && options.cache ? 300 : 0}
          }).then(res => {
              if (!res.ok) {
                  console.log(res)

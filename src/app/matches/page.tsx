@@ -29,7 +29,7 @@ export default async function AboutPage() {
                         </div>
                     </ContainerComponent>
                 </div>
-                <div className="w-fyll bg-stone-100">
+                <div className="w-full bg-stone-100">
                     <Suspense fallback={<h6>Loading...</h6>} >
                         <MatchesFront />
                     </Suspense>
