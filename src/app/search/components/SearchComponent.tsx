@@ -16,7 +16,7 @@ export const SearchComponent:React.FunctionComponent = () => {
     const store = useAppSelector(state => state.search)
     const dispatch = useAppDispatch()
     
-
+    
     const handleSubmit = (e:FormEvent) => {
         e.preventDefault()
         getFetch<ApiResponse<UserProfile[]>>(name).then(data => {

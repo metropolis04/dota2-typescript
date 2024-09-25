@@ -11,6 +11,9 @@ export default async function SupabasePage() {
                     <div className="px-3 w-32">
                         <Link href="/supabase/players">Players</Link>
                     </div>
+                    <div className="px-3 w-32">
+                        <Link href="/supabase/database">Postgres</Link>
+                    </div>
                 </div>
             </ContainerComponent>
         </>

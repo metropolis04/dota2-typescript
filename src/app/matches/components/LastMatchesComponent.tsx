@@ -30,8 +30,11 @@ export const LastMatchesComponent = ({data} : {  data : ProMatch[] }):React.JSX.
                     <LastMatchesFilters  matches={matches} />
                 <div className="grid grid-cols-3 gap-x-8 gap-y-8 w-full pb-8 pt-4" >
                 {matches.getSortedMatches().filter(value => value.league_name.includes(filterStore.lastmatches.league)).map((value,index) => {
-                    return <div key={index} className="bg-white p-4" >
+                    return <div key={index} className="bg-white p-4 relative" >
                                 <MatchMediumComponent data={value} />
+                                <div className="absolute bottom-0 left-0  w-full h-1/3 bg-gray-400 opacity-80 flex flex-row justify-center items-center">
+                                    <h6>hello</h6>
+                                </div>
                             </div>
                 }).slice(
                     [0].concat(_.range(0, 1200, filterStore.lm_settings.page_units))[filterStore.lm_settings.page],

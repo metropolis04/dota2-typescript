@@ -17,7 +17,6 @@ export const MatchesFront:React.FunctionComponent = async () => {
     
     if (users.success) {
 
-        
         const matchOptions:MatchDetails = new MatchDetails(users.data)
         
         return (

@@ -6,7 +6,7 @@ import MatchDetails from "../../utils/matchUtils"
 export const MatchMediumComponent = ({data} : { data : ProMatch }):React.JSX.Element => {
 
     const matchOptions:MatchDetails = new MatchDetails([data])
-
+    
     return (
         <>
             <div className="w-fill flex flex-col">
