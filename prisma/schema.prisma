@@ -19,7 +19,7 @@ model User {
   email     String   @unique
   name      String?
   role      Role     @default(USER)
-  posts     Post[]
+  posts     Post[]   // virtual relation field
 }
 
 model Post {

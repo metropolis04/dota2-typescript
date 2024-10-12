@@ -33,6 +33,9 @@ export const RegisterFormComponent:React.FunctionComponent = () => {
             <div className=" w-full flex justify-start pt-12">
                 <form onSubmit={handleSubmit} >
                     <div className="flex flex-col" >
+                        <div className="py-4" >
+                            <h5>Add new customer</h5>
+                        </div>
                         <div className="flex flex-col" >
                             <h6>Email</h6>
                             <input className="border px-2 py-2" type="email" name="email" onChange={(e) => setEmail(e.target.value)} />
