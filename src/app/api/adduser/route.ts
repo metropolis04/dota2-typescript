@@ -8,8 +8,8 @@ export async function POST(req:NextRequest) {
     const postdata = await req.json()
     
     if (postdata) {
-        let user: Prisma.UserCreateInput
-        user = {
+        
+        let user = {
             email: postdata.email,
             name: postdata.name,
             posts: {
