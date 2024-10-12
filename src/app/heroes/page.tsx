@@ -25,7 +25,7 @@ export default async function HeroesPage() {
     } else {
         return (
             <>
-                <h6>Heroes data not found !</h6>
+                <h6>Heroes data not found</h6>
             </>
         )
     }
