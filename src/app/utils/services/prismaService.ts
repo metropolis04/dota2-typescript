@@ -4,8 +4,8 @@ const prisma = new PrismaClient()
 
 export const getPristaOptions = () => {
     async function addUser(data: {email:string, name:string}) {
-        let user: Prisma.UserCreateInput
-        user = {
+        
+        let user = {
             email: data.email,
             name: data.name,
             posts: {
